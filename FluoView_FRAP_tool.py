@@ -14,7 +14,6 @@ import re
 
 class FRAPData:
     def __init__(self):
-        # reps, maxtime, D, tau_half, file_list, df -- positional args?
         self.replicates = int
         self.maxtime = int
         self.D = int
@@ -103,7 +102,7 @@ class FRAPData:
             good_taus = np.array([])
 
             for rep, zscore in self.tau_half_zscores.items():
-                if zscore > 1.51:
+                if zscore > 2:
                     self.all_data = self.all_data[self.all_data.replicate != rep]
                     self.replicates -= 1
                 else:
@@ -183,7 +182,7 @@ if __name__ == '__main__':
              are produced by Olympus' FluoView software.
             '''))
 
-    parser.add_argument('--cutoff-value', default = 1, type = int, help ="Specifies the \
+    parser.add_argument('--cutoff-value', default = 0, type = int, help ="Specifies the \
         value that will be used to truncate timeseries in the final plot. Increasing this \
         value allows the user to prevent early truncation of the entire dataset if one time \
         series was halted early during the FRAP acquisition.")
