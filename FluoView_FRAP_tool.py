@@ -190,7 +190,6 @@ if __name__ == '__main__':
         '''Insert the name of the current directory as a frame.''')
     parser.add_argument('--bin-size', default=2700, type=int, help = 
         '''Window size for binning timepoints between different replicates.''')
-    # parser.add_argument('--collate', '-c', help = 'aggregate all files into a new csv', default=True)
     parser.add_argument('--normalization-frames', default = 4, type=int, help = 
     '''number of frames of baseline frames collected.''')
     parser.add_argument('--stats', choices=('short', 'full'), help = '''Summarize the data.''')
