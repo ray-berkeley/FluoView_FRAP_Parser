@@ -22,7 +22,7 @@ Edit the width of the window that is used to bin replicates into discrete time p
 ### --normalization-frames
 Change the number of frames that are pulled from the head of the data and used to set the baseline pre-bleach fluorescence intensity. 
 
-### --stats=["short", "long"]
+### --stats {short, full}
 Print some statistics about the parsed fluorescence recovery data. 
 * short prints a brief summary of the data to stdout.
 * long prints the data from "short" and also dumps an html file containing the final dataframe into the current directory. 

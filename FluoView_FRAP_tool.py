@@ -178,23 +178,22 @@ def raw_LiveStop_parser(csv, normalization_frames):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=(
-            '''Read and manipulate lists of comma separated files that
-             are produced by Olympus' FluoView software.
-            '''))
-
-    parser.add_argument('--cutoff-value', default = 0, type = int, help ="Specifies the \
-        value that will be used to truncate timeseries in the final plot. Increasing this \
-        value allows the user to prevent early truncation of the entire dataset if one time \
-        series was halted early during the FRAP acquisition.")
+            '''Read and manipulate lists of comma separated files that are produced by
+             Olympus' FluoView software.'''))
+    parser.add_argument('--cutoff-value', default = 0, type = int, help =
+        '''Specifies the  value that will be used to truncate timeseries in 
+        the final plot. Increasing this value allows the user to prevent early 
+        truncation of the entire dataset if one time series was halted early 
+        during the FRAP acquisition.''')
     parser.add_argument('--path', '-p', help = 'target path for csv aggregation')
-    parser.add_argument('--append-dir', default = False, type = bool, help = 'Insert the name of the \
-        current directory as a frame.')
-    parser.add_argument('--bin-size', default=2700, type=int, help = 'Window size for \
-        binning timepoints between different replicates. Value is in ms.')
+    parser.add_argument('--append-dir', default = False, type = bool, help =
+        '''Insert the name of the current directory as a frame.''')
+    parser.add_argument('--bin-size', default=2700, type=int, help = 
+        '''Window size for binning timepoints between different replicates.''')
     # parser.add_argument('--collate', '-c', help = 'aggregate all files into a new csv', default=True)
-    parser.add_argument('--normalization-frames', default = 4, type=int, help = 'number of frames of \
-        baseline frames collected')
-    parser.add_argument('--stats', choices=('short', 'full'), help = "summarize the data")
+    parser.add_argument('--normalization-frames', default = 4, type=int, help = 
+    '''number of frames of baseline frames collected.''')
+    parser.add_argument('--stats', choices=('short', 'full'), help = '''Summarize the data.''')
     parser.add_argument('--purge-outliers', type = bool, default = False)
     args = parser.parse_args()
 
