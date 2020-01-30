@@ -1,16 +1,11 @@
 #!/bin/python
 
 import argparse
-# import matplotlib
-# matplotlib.use('agg')
-# import matplotlib.pyplot as plt
 import numpy as np
 import os
 import pandas as pd
 import pickle
 import re
-# import seaborn as sns
-# import statsmodels.api as sm
 
 class FRAPData:
     def __init__(self):
@@ -132,7 +127,7 @@ def raw_LiveStop_parser(csv, normalization_frames):
 
             if lines_in_header == 1:
                 pass
-                # assert csv_line[0].startswith('LiveStop'), f'{csv} is not a raw Olympus csv file!'
+                # assert csv_line[0].startswith('LiveStop'), f'{csv} is not a raw Olympus csv file'
             if csv_line[0] == '\n':
                 break
     
