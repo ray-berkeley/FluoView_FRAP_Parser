@@ -31,11 +31,11 @@ class FRAPData:
             zscore = self.tau_half_zscores.get(reps)
             print(f"{reps} ~ {taus:.2f} ~ {zscore:.2f}")
 
-        print("######################################################")
+        print("###########################################")
         if full==True:
             self.all_data.to_html('report.html')
 
-    def bin(self, bin_size, cutoff_value):
+    def bin_data(self, bin_size, cutoff_value):
         '''Bins timepoints to a bin size set by the user. This method also trims
         all replicates to the same length (by timepoint)'''
 
@@ -217,7 +217,7 @@ if __name__ == '__main__':
                 
     MyFRAPData.file_list = file_list
     MyFRAPData.populate(args.normalization_frames, args.append_dir)
-    MyFRAPData.bin(args.bin_size, args.cutoff_value)
+    MyFRAPData.bin_data(args.bin_size, args.cutoff_value)
     MyFRAPData.compute_means()
     MyFRAPData.compute_zscores(args.purge_outliers)
 
