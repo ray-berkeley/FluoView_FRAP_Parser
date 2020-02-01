@@ -31,7 +31,7 @@ class FRAPData:
             zscore = self.tau_half_zscores.get(reps)
             print(f"{reps} ~ {taus:.2f} ~ {zscore:.2f}")
 
-        print("#####################################")
+        print("###############################")
         if full==True:
             self.all_data.to_html('report.html')
 
