@@ -160,7 +160,7 @@ def raw_LiveStop_parser(csv, normalization_frames):
     # Zero recovery values for each replicate. This allows us to take the 
     # standard deviation of our zeroed values instead of having to correct
     # using the coefficient of variance later.
-    raw_df['recovery0'] = raw_df['recovery'] - raw_df.recovery.min()
+    raw_df['recovery0'] = raw_df['recovery'] - raw_df.iloc[0, 2]
 
     # Calculate the half life for this rep. This value is used to determine the final
     # recovery half life and can be printed using the --stats argument if desired. 
